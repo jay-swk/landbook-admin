@@ -9,7 +9,9 @@ import Image from 'next/image';
 
 const navigation = [
   { name: 'Dashboard', href: '/' },
-  { name: 'user-ticket', href: '/users/ticket/lists' },
+  { name: '이용권 조회', href: '/users/ticket/lists' },
+  { name: '이용권 등록', href: '/users/ticket/form' },
+  { name: '주문', href: '/users/orders' },
   // { name: 'Signin', href: '/auth/login' }
 ];
 
@@ -19,9 +21,9 @@ function classNames(...classes: string[]) {
 
 export default function Navbar() {
   const pathname = usePathname();
-  const { data: session } = useSession();
+  const { data: session, status } = useSession();
   const user = session?.user as any
-  // console.log(user.token);
+  console.log("session", session);
 
   return (
     <Disclosure as="nav" className="bg-white shadow-sm">
