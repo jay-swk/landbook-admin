@@ -10,7 +10,6 @@ import {
 import { Tickets } from '../../../interface/tickets';
 
 export default function GetTicketLists({ tickets }: { tickets: Tickets[] }) {
-  console.log(tickets);
   return (
     <Table>
       <TableHead>

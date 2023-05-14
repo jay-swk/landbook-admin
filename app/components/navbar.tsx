@@ -11,7 +11,7 @@ const navigation = [
   { name: 'Dashboard', href: '/' },
   { name: '이용권 조회', href: '/users/ticket/lists' },
   { name: '이용권 등록', href: '/users/ticket/form' },
-  { name: '주문', href: '/users/orders' },
+  { name: '주문', href: '/users/orders/form' },
   // { name: 'Signin', href: '/auth/login' }
 ];
 

@@ -7,10 +7,11 @@ import { getSession, useSession } from 'next-auth/react';
 import GetTicketLists from './getTicketLists';
 import { Tickets } from '../../../interface/tickets';
 
-const IndexPage = () => {
+const TicketListPage = () => {
   const userId = useRef('');
   const [status, setStatus] = useState('');
   const [tickets, setTickets] = useState<Tickets[]>([]);
+  console.log(tickets)
 
   const handleStatusChange = (value: string) => {
     setStatus(value);
@@ -67,4 +68,4 @@ const IndexPage = () => {
   );
 }
 
-export default IndexPage;
+export default TicketListPage;
