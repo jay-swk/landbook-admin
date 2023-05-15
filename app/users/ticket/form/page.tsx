@@ -33,7 +33,7 @@ const TicketFormPage = () => {
 
     axios
       .post(
-        'http://localhost:8888/payment/admin/tickets',
+        `${process.env.LANDBOOK_API_URL}/payment/admin/tickets`,
         JSON.stringify(requestData),
         {
           headers: {

@@ -3,7 +3,7 @@ import CredentialsProvider from 'next-auth/providers/credentials';
 import axios from 'axios';
 import { JWT } from 'next-auth/jwt';
 
-const baseURL = process.env.LANDBOOK_API_URL;
+const baseURL = process.env.NEXT_PUBLIC_API_URL;
 
 // async function refreshAccessToken(tokenObject) {
 //   try {
@@ -37,7 +37,7 @@ export const authOptions: NextAuthOptions = {
       async authorize(credentials, req) {
         const { username, password } = credentials as any;
 
-        const res = await fetch('https://dev-api2.landbook.me/auth/signin', {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/auth/signin`, {
           method: 'POST',
           headers: {
             Accept: 'application/json',

@@ -30,7 +30,7 @@ const TicketListPage = () => {
       return;
     }
 
-    axios.get('http://localhost:8888/payment/admin/tickets', {
+    axios.get(`${process.env.NEXT_PUBLIC_API_URL}/payment/admin/tickets`, {
       params: {
         userId: userId.current,
         status: status

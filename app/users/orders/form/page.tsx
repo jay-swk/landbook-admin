@@ -51,7 +51,7 @@ const OrderFormPage = () => {
 
     axios
       .post(
-        `http://localhost:8888/payment/admin/orders/${userId.current}`,
+        `${process.env.NEXT_PUBLIC_API_URL}/payment/admin/orders/${userId.current}`,
         JSON.stringify(requestData),
         {
           headers: {
@@ -82,7 +82,7 @@ const OrderFormPage = () => {
 
     axios
       .put(
-        `http://localhost:8888/payment/admin/orders/${order.orderId}`,
+        `${process.env.NEXT_PUBLIC_API_URL}/payment/admin/orders/${order.orderId}`,
         JSON.stringify(requestData),
         {
           headers: {
@@ -115,7 +115,7 @@ const OrderFormPage = () => {
         />
         <SelectBox onValueChange={(value) => setItem(value)}>
           {itemList.map((key) => (
-            <SelectBoxItem
+            <SelectBoxItem key={key.id}
               value={key.id as unknown as string}
               text={key.name}
             />
@@ -131,7 +131,7 @@ const OrderFormPage = () => {
             order.length === 0 ? { display: 'none' } : { display: 'block' }
           }
         >
-          <div key={order.orderId}>
+          <div>
             <Text>orderId : {order.orderId}</Text>
             <Text>count : {order.count}</Text>
             <Text>orderedPrice : {order.orderedPrice}</Text>
