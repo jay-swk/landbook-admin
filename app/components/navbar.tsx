@@ -12,6 +12,8 @@ const navigation = [
   { name: '이용권 조회', href: '/users/ticket/lists' },
   { name: '이용권 등록', href: '/users/ticket/form' },
   { name: '주문', href: '/users/orders/form' },
+  { name: '쿠폰 생성', href: '/coupons/generate' },
+  { name: '쿠폰 발급', href: '/coupons/register' },
   // { name: 'Signin', href: '/auth/login' }
 ];
 
