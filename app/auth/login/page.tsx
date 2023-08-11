@@ -3,16 +3,10 @@ import { Metric, Card, Button, Divider, TextInput } from "@tremor/react";
 import { signIn } from "next-auth/react";
 import { useRef } from "react";
 
-interface Iprops {
-  searchParams?: { [key: string]: string | string[] | undefined };
-}
-
-export default function LoginPage({searchParams}: Iprops) {
+export default function LoginPage() {
   const userName = useRef("");
   const password = useRef("");
   const error = useRef("");
-
-  console.log(searchParams)
 
   const onSubmit = async() => {
     const result = await signIn("credentials", {
@@ -25,7 +19,6 @@ export default function LoginPage({searchParams}: Iprops) {
 
   return (
     <div className="relative mt-5 mb-5">
-      {searchParams?.error && <p className="text-red-700 bg-red-100 py-2 px-5 rounded-md">{searchParams?.error}</p>}
       <Card className="max-w-xl mx-auto" decoration="top" decorationColor="indigo">
 
         <Metric className="mb-5">Landbook Admin</Metric>

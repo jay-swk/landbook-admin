@@ -92,21 +92,21 @@ export const authOptions: NextAuthOptions = {
       // if (shouldRefreshTime > 0) {
       // return token
       // }
-      console.log("get token", token.user.token)
+      // console.log("get token", token.user.token)
       return refreshAccessToken(token)
     },
     async session({ session, token }) {
       // Send properties to the client, like an access_token from a provider.
       session.user = token.user as User
-      session.accessToken = token.user.token
-      session.accessTokenExpires = token.accessTokenExpires
-      session.error = token.error
-      console.log("get session", token.user.token)
+      // session.accessToken = token.user.token
+      // session.accessTokenExpires = token.accessTokenExpires
+      // session.error = token.error
+      // console.log("get session", token.user.token)
       return session
     },
   },
   pages: {
-    signIn: '/auth/login'
+    signIn: '/auth/login/'
   }
 };
 
