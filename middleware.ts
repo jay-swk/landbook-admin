@@ -27,8 +27,9 @@ export async function middleware(req: NextRequest) {
   const isPathProtected = protectedPaths?.some((path) => pathname.startsWith(path));
   const res = NextResponse.next();
   
-  if (pathname !== "/auth/login" && !pathname.startsWith("/api/") && !pathname.startsWith("/_next/") && !pathname.startsWith("/static/") && isPathProtected) {
+  if (pathname !== "/auth/login/" && !pathname.startsWith("/api/") && !pathname.startsWith("/_next/") && !pathname.startsWith("/static/") && isPathProtected) {
     const token = await getToken({ req });
+    console.log(token)
     if (!token) {
       const url = new URL(`/auth/login`, req.url);
       url.searchParams.set("callbackUrl", pathname);
