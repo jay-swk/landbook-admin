@@ -3,9 +3,9 @@
  * */
 const nextConfig = {
   images: {
-    // loader: 'imgix',
-    // path: 'http://localhost:3000',
     domains: ['avatars.githubusercontent.com', 'avatar.vercel.sh'],
+    loader: "custom",
+    loaderFile: './loader.js',
     // unoptimized: true,
   },
   experimental: {
@@ -15,7 +15,7 @@ const nextConfig = {
   // assetPrefix: 'http://localhost:3000',
   trailingSlash: true,
   exportTrailingSlash: true,
-  output: 'export',
+  // output: 'export',
 };
 
 module.exports = nextConfig;
